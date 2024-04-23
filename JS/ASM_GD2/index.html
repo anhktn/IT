@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLUKE-SHOPPING ONLINE</title>
+    <link rel="stylesheet" href="./CSS/index.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+<body onload="start()">
+    <!-- header -->
+    <div class="menu">
+        <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Sản phẩm</a></li>
+            <!-- <div class="dropdown">
+                <ul>
+                    <li>Giày cao gót</li>
+                    <li>Váy</li>
+                    <li>Trang sức</li>
+                    <li>Túi sách</li>
+                    <li>Phụ kiện</li>
+                </ul>
+            </div> -->
+            <li><a href="#">Dịch vụ</a></li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+        <div class="item fr" >
+            <input style="padding: 7px; margin-left: 100px;" type="text" required="required" value="Tìm kiếm">
+            <button style="padding: 7px;" class="search">Tìm kiếm</button>
+        </div>
+
+        <div class="cart-ic" style="font-size: 40px; color: white; margin-left: 100px;"><i class='bx bx-cart'></i></div>
+    </div>
+
+    
+
+    <!-- slider -->
+    <div class="main">
+        <img id="slidercs" src="./Image/imageindex/banner1.jpg" height="700px" width="100%"><br>
+        <div class="controlcs precs" onclick="pre()"><i class='bx bx-chevron-left'></i></div>
+        <div class="controlcs nextcs" onclick="next()"><i class='bx bx-chevron-right'></i></div>
+    </div>
+
+    <br>
+    <script>
+        var arr = ['./Image/imageindex/banner1.jpg', './Image/imageindex/banner2.jpg', './Image/imageindex/banner3.jpg'];
+        var index = 0;
+        var a = document.getElementById("slidercs");
+        function pre() {
+            if (index == 0) {
+                index = 3;
+            }
+            index--;
+            a.src = arr[index];
+        }
+        function next() {
+            if (index == 2) {
+                index = -1;
+            }
+            index++;
+            a.src = arr[index];
+        }
+        function start(){
+            var st = setInterval(next, 1500);
+        }
+    </script>
+    <!-- slider -->
+
+    <h2 align="center">DANH MỤC SẢN PHẨM</h2>
+    <div class="product">
+        <div class="container">
+            <div class="product-items">
+                <div class="product-item">
+                    <img src="./Image/imageindex/tui1.jpg" alt="">
+                    <div class="product-item-text">
+                        <p><span>150.000</span>Đ</p>
+                        <h2>Crew</h2>
+                    </div>
+                    <button>Thêm vào giỏ hàng</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="./Image/imageindex/tui17.png" alt="">
+                    <div class="product-item-text">
+                        <p><span>720.000</span>Đ</p>
+                        <h2>JW Anderson</h2>
+                    </div>
+                    <button>Thêm vào giỏ hàng</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="./Image/imageindex/tui18.jpg" alt="">
+                    <div class="product-item-text">
+                        <p><span>320.000</span>Đ</p>
+                        <h2>Prada</h2>
+                    </div>
+                    <button>Thêm vào giỏ hàng</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="./Image/imageindex/tui5.jpg" alt="">
+                    <div class="product-item-text">
+                        <p><span>750.000</span>Đ</p>
+                        <h2>Christian Dior</h2>
+                    </div>
+                    <button>Thêm vào giỏ hàng</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="./Image/imageindex/tui4.jpg" alt="">
+                    <div class="product-item-text">
+                        <p><span>860.000</span>Đ</p>
+                        <h2>Coat Elise Satchel</h2>
+                    </div>
+                    <button>Thêm vào giỏ hàng</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="./Image/imageindex/tui6.jpg" alt="">
+                    <div class="product-item-text">
+                        <p><span>230.000</span>Đ</p>
+                        <h2>Gucci Horsebit</h2>
+                    </div>
+                    <button>Thêm vào giỏ hàng</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="./Image/imageindex/tui7.jpg" alt="">
+                    <div class="product-item-text">
+                        <p><span>150.000</span>Đ</p>
+                        <h2>Michales Kors</h2>
+                    </div>
+                    <button>Thêm vào giỏ hàng</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="./Image/imageindex/tui8.jpg" alt="">
+                    <div class="product-item-text">
+                        <p><span>900.000</span>Đ</p>
+                        <h2>Lady D-Lite</h2>
+                    </div>
+                    <button>Thêm vào giỏ hàng</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="cart">
+        <h2>Giỏ hàng của bạn</h2>
+        <form action="">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sản phẩm</th>
+                        <th>Giá</th>
+                        <th>SL</th>
+                        <th>Chọn</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- <tr>
+                        <td style="display: flex; align-items: center;"><img src="./Image/imageindex/tui1.jpg" width="80px"><span class="title">Túi sách</span></td>
+                        <td><span>320.000</span>Đ</td>
+                        <td><input style="width: 50px; outline: none;" type="number" value="1" min="1"/></td>
+                        <td style="cursor: pointer">Xóa</td>
+                    </tr>
+                    <tr>
+                        <td style="display: flex; text-align: center;"><img src="./Image/imageindex/tui1.jpg" width="80px">Túi sách</td>
+                        <td><span>320000 </span>Đ</td>
+                        <td><input style="width: 50px; outline: none;" type="number" value="1" min="0"/></td>
+                        <td style="cursor: pointer">Xóa</td>
+                    </tr> -->
+                </tbody>
+            </table>
+
+            <div style="text-align: right;" class="tongTien">
+                <p style="font-weight: bold;">Tổng tiền: <span>0</span> Đ</p>
+            </div>
+        </form>
+        <button id="datHang">Đặt hàng</button>
+    </div>
+
+    <div class="form-datHang">
+        <h2>ĐẶT HÀNG</h2>
+        <form onsubmit="return validate()">
+            <label>Họ tên </label>
+            <input id="hoTen" type="text" />
+            <p id="errten" type="text" value=""></p>
+
+
+            <label>SĐT </label>
+            <input id="sdt" type="text" />
+            <p id="errsdt" type="text" value=""></p>
+
+
+            <label>Email </label>
+            <input id="email" type="text" />
+            <p id="erremail" type="text" value=""></p>
+            <!-- <br><br> -->
+            <label>Nơi nhận hàng</label>
+            <input type="radio" name="nnh" value="Nội thành" onchange="diaDiem(), tongChiPhi()">
+            <label>Nội thành</label>
+            <input type="radio" name="nnh" value="Ngoại thành" onchange="diaDiem(), tongChiPhi()">
+            <label>Ngoại thành</label>
+            <p id="errnoinhan" type="text" value=""></p>
+            <!-- <br><br> -->
+            <br>
+            <label >Phí vận chuyển</label>
+            <input id="phiVanChuyen" type="text"/>
+
+            <div style="text-align: right;" class="tongThanhToan">
+                <p style="font-weight: bold;">Tổng tiền: <span>0</span> Đ</p>
+            </div>
+            <br><br>
+            <hr>
+            <button onclick="validate()" id="datMua" style="margin-bottom: 15px;">Đặt mua</button>
+
+        </form>
+    </div>
+
+    <div class="video-grid">
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/yrlSxJ5c2aU?si=o8StRRYviInPPWGR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>        </div>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/td35heCvPGU?si=_hnSBevqQpsjxoev" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>        </div>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/FUm-bT432_c?si=PNj-H4Iewkgd26nA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    </div>
+
+</div>
+
+    <footer>
+        <div class="containerft">
+            <div class="footer-info">
+                <div class="contact-info">
+                    <h3>Thông tin liên hệ</h3>
+                    <p>Địa chỉ: 123 Trịnh Văn Bô, Nam Từ Liêm, Hà Nội</p>
+                    <p>Điện thoại: 123-456-7890</p>
+                    <p>Email: muasam@fluke.com</p>
+                </div>
+
+
+                <div class="contact-info">
+                    <h3>Chính sách bảo hành</h3>
+                    <p>Đổi trả</p>
+                    <p>Bảo hành </p>
+                    <p>Hoàn hàng</p>
+                </div>
+
+                <div class="contact-info">
+                    <h3>Thanh toán</h3>
+                    <p>Voucher</p>
+                    <p>Thanh toán trực tuyến </p>
+                    <p>Thanh toán tại cửa hàng</p>
+                </div>
+    
+            </div>
+            <div class="copyright" style="margin-top: 30px;">
+                <p>&copy; 2023 anhktnph36088</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+    </head>
+</body>
+
+</html>

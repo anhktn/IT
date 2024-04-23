@@ -1,0 +1,117 @@
+1. Bắt đầu với Java và OOP
+-Download JDK ( Java Development Kit) 8.0, 16
+-Bắt cuộc cài JDK trước, double click .exe --> click --> next --> next --> finish/ok
+
+*Cài tool lập trình: IntelliJ (@edu có thể xài down bản full tính năng) còn có bản Community;
+Eclip (IBM), NetBean (Oracle/ApacheAhe) 
+-Cài next next, chú ý màn hình cài hỏi câu là : JDK bạn cài trước đó ở đâu -> C:\Program Files\Java\JDK version
+
+*Màn hình desktop có logo lục giác, NetBean IDE, mở tool lên
+*DevC++/CodeBlock/...      ~NetBean ---> tool để gõ code,...
+*Cygwin/gcc/MinGW     	   ~JDK     ---> trình biên dịch, thông dịch
+					compile -> biến code người viết thành sourse code					thành đoạn lệnh máy hiểu được machine code/binary 					code								
+
+
+______________________________________
+
+OBJECT VÀ CLASS
+1.Object là: gom n value phức tạp 
+		là một vật thể, thứ gì đó, thing mà có những đặc điểm, hành vi
+		là những thứ ta có thể đếm, sờ, mô tả, phân biệt được
+2.Class: sự phân nhóm, tên gọi cho 1 nhóm các đối tượng theo một tiêu chí nào đó
+	tiêu chí: hát -->nhóm CaSi  -- class CaSi
+	tiêu chí: đóng phim  --> nhóm DienVien
+3.Có nhiều đối tượng xuất hiện, gom nhóm được rồi thành class
+--> làm sao lưu trữ, quản lí, xử lí các đối tượng này	
+4. OOP: giống y chang kỹ thuật đúc tượng
+	muốn làm object nào, tạo ra khuôn cho nhóm object đó/Class
+		khuôn đúc ra cúp, class cup
+	Khuôn CaSi lưu đc info các cái, khuôn mẫu class CaSi
+
+	từ object tạo ra khuôn, sau này dùng khuôn đúc trở lại các object
+
+_______________________________________
+
+TÓM TẮT 1: CLASS_OBJECT_BIẾN OBJECT_CHẠM/SỜ
+1.Biến là tên gọi đại diện cho một giá trị đơn giản (primitive) hoặc phức tạp (obj)
+2.Có biến là có vùng nhớ được cấp trong RAM (biến primitive hay obj đều được cấp cùng RAM tương ứng)
+3.Có NEW là có vùng nhớ được cấp trong RAM (Vùng nhớ NEW-vùng nhớ bự-còn gọi là vùng nhwos obj-vùng nhớ ENCAPSULATION - chứa  toàn
+bộ thông tin của object gồm đặc điểm và hành vi được CLONE từ khuôn-Class. Toán tử new...() trả về địa chỉ/tọ độ vùng nhớ obj new vừa tạo, và gửi địa chỉ này cho "biến obj/biến con trỏ" giữ giùm.)
+4.Biến primitive lưu value ngay trong vùng nhớ được cấp ( tên tắt của giá trị đơn sẽ được cấp 1 số byte tùy dât type - ví dụ int 4, long 8. ON/OFF của transitor của vùng RAM sẽ biểu diễn giá trị cần lưu trữ)
+5.Biến Object tham chiếu - trỏ thẳng vào vùng new được cấp- vùng obj ( biến obj được xem là biến con trỏ - trỏ thẳng vào vùng ram bự vừa đc NEW. Trỏ nghĩa là nắm/lưu lại tọa độ/địa chỉ của vùng new.
+6.Sờ vào vùng new được cấp qua biến con trỏ chấm (.).Biến obj trỏ đến tọa độ vùng new/vùng obj được cấp. Vùng NEW có rất nhiều thoogn tin được quyền "Sờ chạm". Thông tin này dwuocj Clone theo thiết kế Khuôn_class lúc đúc ra object. Thích chạm sờ gì thì chấm cái đó)
+7. Ai có nhiều thông tin nhất, kẻ đó nên xử lý thông tin này thay vì để kẻ khác ( Hàm gắn với đối tượng/class để xử lí chính những info mà nó đang chứa - ENCAPSULATION)
+ HỆ QỦA
+1.Biến primitive chỉ tốn một vùng ram (on-off vùng ram này chứa luôn value cần lưu trữ. Tên biến chính là value cần dùng, không chấm)
+2.Object tốn 2 vùng ram( một vùng RAM là vùng NEW - chính là obj chứa đặc tính và hành vi. 1 vùng RAM khác là biến con trỏ/biến obj trỏ vùng NEW obj. Chạm sờ vùng new dùng biến obj CHẤM. On-off trong biến con trỏ/ biến obj, value của biến con trỏ chính là tọa độ/địa chỉ vùng NEW
+3.Biến nào khai báo trong hàm thì nằm trong STACK_SEGMENT
+4.OBJECT?/Vùng NEW nằm trong HEAP_SEGMENT    
+
+TÓM TẮT 2: RECIPE FOR COOKING APP JAVA
+
+1.Nhận diện, mô tả được các object xuất hiện trong bài toán qua đặc điểm (biến kèm value-data) và hành vi/hành động xử lí trên các đặc điểm đó. Ví dụ: đặc điểm yob thì có getAge(). Dối tượng  Student x có đặc điểm  id, name, yob, gpa, hành vi doQuiz(), showProfile()
+
+2.Nhận diện gom NHÓM IBJECT-CLASS, là những cụm obj chia sẻ chung các đặc điểm/ hành vi nổi bật khác với các nhóm khác. Ví dụ nhóm CaSi có đặc dặc điểm nổi bật baiHits. Nhóm chính là một dạng phâm loại hay còn gọi là class. Đặt tên cho Nhóm/class này. Thiết kế claa/khuôn gồm đặc điểm ( biến chừa chỗ cho value) và hành vi ( hàm xử lí tổng quát trên biến)
+
+3.Tạo mới PROJECT | Tạo mới class/khuôn. bắt buộc đặt ở một package/ngăn tủ/kho nào đó
+
+4.TẠO KHOẢNG TRỐNG CHỪA CHỖ TRONG CLASS/ KHUÔN. Khoảng trống chính là đặc diểm của obj trong tương tai sẽ được tạo hay đúc ra từ khuôn/class. Chúng còn được gọi là field/instance variable/property/acttribute/characteristic. Nên để chúng là private 
+
+5.Tạo phễu/construction dùng để nhận vật liệu bên ngoài đổ vào các khoảng trống field trong khuôn class để đúc đối tượng. Có thể có nhiều constructor tương ứng với nhiều cách đúc tượng khác nhau . Phễu gọi kèm lệnh new. Mỗi lần gọi phễu mỗi lần new một lần obj mới được tạo ra
+
+6.TẠO CÁC HÀNG ĐỘNG getX(), setX(), cho phéo xem/lấy và sửa/cập nhật thông tin - value của đối tượng đã được đúc được new, được đổ qua phễu trước đó. các hàm này có thể gọi đi gọi lại nhiều lần nhưng phải đi kèm theo tên tắt/biến obj và dấu chấm
+
+7.Tạo hàm TOSTRING() đẻ trả về/show ra hết thông tin có sẵn/value của các field được đổ/gán giá trị đang nằm trong obj. Có thể tùy ý sửa lại hàm này theo ý mình, nhưng tuyệt dối không được đổi tên hàm và kiểu trả về 
+Có thể generate code tự động  phễu, getX(), setX(), toString() qua phím nóng ALT+Insert\ Insert code... khi đó ta xài this
+
+8.tạo các hàm tự tui của riêng mình. Những hàm này dùng để xử lí các thông tin mà obj này sở hữu hay được đổ vào.Nguyên tắc ENCAPSULATION - hàm thuộc về obj. Obj có số dư tài khoản thì có hàm rutTien()
+
+9.Đúc tượng, tạo obj. Sang bên sàn diễn, mặt sàn thi công main()|Khai báo biến obj/tên tắt thuộc kiểu nhóm/khuôn/class vừa tạo \ gọi toán tử neew để tạo vùng nhớ mới dùng chưa thông tin obj| Gọi phễu để đổ value vào | Nhớ import kho. Tên-Khuôn-Class. Ví dụ Dog chiHU = new Dog ("Chi Hu Hu", 2021, 0.5);
+
+10.Yêu cầu obj làm gì đó qua chấm và bung lụa. DÙng dấu chấm qua biến obj để sờ vào bên trong vùng được new mà biến obj đang trỏ. Dấu chấm để triệu gọi/giao tiếp/gửi thông điệp yêu cầu / gọi các hà của obj mình muốn tham chiều. Hành động thuộc về obj - EnCAPSULATION. Ví dụ ngaoDa.Sua() ; sv.showTranscript()
+
+11. Ép sáu (F^) và tận hưởng kết quả - xem app chạy - ahihi. Toàn bộ code của APP gồm khuôn/Class và các lệnh tạo object new...(), gọi hành động của object qua biến object chấm được tải vào vùng RAM CODE-SEGMENT. Lệnh new.. sẽ clone Khuôn?Class vào vùng ram HEAP_SEGMENT để hình thành nên object với đầy đủ dât và hàm xử lý dât. các lệnh gọi hàm của object sẽ làn lượt chạy để cho ra kết quả xử lý như developer đã thieery kế và lập trình 
+
+
+___________________
+overload: hiện tượng trong 1 CLASS có nhiều method cùng tên nhưng khác kiểu dữ liệu của tham số truyền vào (nạp chồng, quá tải hàm) 
+
+___________________
+Mảng là kỹ thuật khai báo nhiều biến (biến sẽ ứng với value sau đó) = nhiều biến nhiêu value nhiều phần tử nhiều value tương ứng
+-Mảng là kt khai báo nhiều biến cùng kiểu, cùng lúc, ở sát nhau trong ram và CÙNG TÊN
+-Khi các biến trùng tên, phải có cách để phân biệt biến này với biến kia, dùng tên phụ [index]
+an[A]
+an[B]
+an[Cao]
+an[Thấp]
+
+giá trả: khai báo biến nhanh hơ, nhưng tên biến phức tạp hơn, đi kèm [số thứ tự do tội trùng tên biến cần có cách pb]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

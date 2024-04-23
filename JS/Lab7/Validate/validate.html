@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        width: 500px;
+        margin: auto;
+    }
+
+    label {
+        text-align: start;
+        margin-right: 20px;
+    }
+</style>
+
+<body>
+    <h2>ĐẶT HÀNG</h2>
+    <form onsubmit="return validate()">
+        <label>Họ tên </label>
+        <input id="hoTen" type="text" />
+        <p id="errten" type="text" value=""></p>
+        
+
+        <label>SĐT </label>
+        <input id="sdt" type="text" />
+        <p id="errsdt" type="text" value=""></p>
+    
+
+        <label>Email </label>
+        <input id="email" type="text" />
+        <p id="erremail" type="text" value=""></p>
+        <!-- <br><br> -->
+
+        <label>Sản phẩm </label>
+        <input id="sanPham" type="text" />
+        <p id="errsanpham" type="text" value=""></p>
+        <!-- <br><br> -->
+
+        <label>Loại</label>
+        <select id="loai" width="100px">
+            <option value=""></option>
+            <option value="Loại 1">Loại 1</option>
+            <option value="Loại 2">Loại 2</option>
+        </select>
+        <input id="errloai" type="text" value=""/>
+        <br><br>
+
+        <label>Số lượng</label>
+        <input type="number" id="soLuong" min="0" value="0" onchange="tinhTienHang(); tinhTongTien()"/>
+        <br><br>
+
+        <label>Đơn giá</label>
+        <input id="donGia" type="number" value="0" onchange="tinhTienHang(); tinhTongTien()"/>
+        <br><br>
+
+        <label>Tiền hàng</label>
+        <input id="tienHang" type="text" onchange="tinhTongTien()"/>
+        <br><br>
+
+        <label>Nơi nhận hàng</label>
+        <input type="radio" name="nnh" value="Nội thành" onchange="diaDiem(), tinhTongTien();">
+        <label>Nội thành</label>
+        <input type="radio" name="nnh" value="Ngoại thành" onchange="diaDiem(), tinhTongTien();">
+        <label>Ngoại thành</label>
+        <br><br>
+
+        <label>Phí vận chuyển</label>
+        <input id="phiVanChuyen" type="text"/>
+        <br><br>
+
+        <label>Tổng tiền</label>
+        <input id="tongTien" type="text" />
+        <br><br>
+        <hr>
+        <button onclick="validate()">Đặt mua</button>
+
+    </form>
+
+    <script>
+        var hoTen = document.getElementById("hoTen");
+        var sdt = document.getElementById("sdt");
+        var email = document.getElementById("email");
+        var tenSP = document.getElementById("sanPham");
+        var noiNhanHang = document.getElementsByName("nnh");
+        var phiVanChuyen = document.getElementById("phiVanChuyen");
+
+        function diaDiem() {
+            if (noiNhanHang[0].checked) {
+                phiVanChuyen.value = 0;
+            } else {
+                phiVanChuyen.value = 30000;
+            }
+        }
+
+        function validate(){
+            var conloiTen = true;
+            var conloiSDT =true;
+            var conloiEmail = true;
+            var conloiLoai = true;
+            var conloiNoiNhanHang = true;
+
+            var mesgTen = document.getElementById("errten");
+            var mesgSDT = document.getElementById("errsdt");
+            var mesgEmail = document.getElementById("erremail");
+            var mesgLoai = document.getElementById("errloai");
+            var mesgNoiNhanHang = document.getElementById("errnoinhan");
+
+
+            
+            if(hoTen.value == ""){
+                mesg.innerHTML= "Không bỏ trống tên";
+            }else{
+                conloiTen = true;
+                mesg.innerHTML = "";
+            }
+
+            if(s)
+
+
+            if(conloiTen){
+                return false;
+            }
+            return true;
+        }
+
+    
+    </script>
+</body>
+
+</html>
